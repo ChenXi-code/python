@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1.1 数据集介绍 &mdash; Python 知识手册 1.0 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="4、额外功能" href="python_base.html" />
+    <link rel="prev" title="1.4 test" href="python_base_knowledge.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Python 知识手册
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">第一章：python基础</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python_base_knowledge.html">1.4 test</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.1 数据集介绍</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.2 模型分析</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.3 使用神经网络进行股价预测</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_base.html">4、额外功能</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Python 知识手册</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">第一章：python基础</a> &raquo;</li>
+      <li>1.1 数据集介绍</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tree/how_to_study_py.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>大家好，前两天有粉丝问有关算法预测的问题。今天我们就以股价预测为例，分享一下两种预测方法：</p>
+<ul class="simple">
+<li><p>常规方式股票预测</p></li>
+<li><p>新方 #### 1. 常规方式股票预测</p></li>
+</ul>
+<section id="id1">
+<h1>1.1 数据集介绍<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<p>本文使用的股价数据集来自GitHib：<code class="docutils literal notranslate"><span class="pre">https://github.com/pierpaolo28/Data-Visualization/blob/master/Dash/stock_data.csv</span></code>。</p>
+<p>下载数据集后，查看其内容，可以看到数据集中包含时间、开盘时股价等一系列相关信息，本文需要预测的是股价当天的最终价格，即
+<code class="docutils literal notranslate"><span class="pre">Close</span></code> 列的数据：</p>
+<figure class="align-default" id="id4">
+<img alt="股价数据集" src="https://img-blog.csdnimg.cn/756f3d0021fd4957956e253a94763217.png#pic_center" />
+<figcaption>
+<p><span class="caption-text">股价数据集</span><a class="headerlink" href="#id4" title="永久链接至图片"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h1>1.2 模型分析<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h1>
+<p>为了预测股价，我们根据以下思路构建神经网络模型：</p>
+<ul class="simple">
+<li><p>按照时间发生顺序对数据集进行排序</p></li>
+<li><p>以前五个股票价格数据作为输入，第六个股票价格数据作为输出</p></li>
+<li><p>滑动时间窗口，在模型的下一个输入使用第二个到第六个数据，并将第七个数据作为输出，依此类推，直到到达最后一个数据点</p></li>
+<li><p>由于我们需要预测的是一个连续值，因此损失函数使用均方误差值</p></li>
+<li><p>此外，我们还将在下个环节尝试利用文本数据集成到历史股票价格数据中，以预测第二天股价的情况</p></li>
+</ul>
+</section>
+<section id="id3">
+<h1>1.3 使用神经网络进行股价预测<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h1>
+<p>根据以上模型的思路，接下来，我们使用 <code class="docutils literal notranslate"><span class="pre">Keras</span></code>
+实现神经网络模型用于预测股价。</p>
+<p>1.导入相关的包和数据集：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;content/stock_data.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>2.按照前述分析准备数据集，其中输入是前五天的股票价格，输出是第六天的股票价格：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">4</span><span class="p">)][</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">5</span><span class="p">][</span><span class="s1">&#39;Close&#39;</span><span class="p">])</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>3.准备训练和测试数据集，构建模型：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Dense</span>
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;linear&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>4.建立模型并进行编译：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;mean_squared_error&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>看以看到，模型的简要信息输出如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Model</span><span class="p">:</span> <span class="s2">&quot;sequential&quot;</span>
+<span class="n">_________________________________________________________________</span>
+<span class="n">Layer</span> <span class="p">(</span><span class="nb">type</span><span class="p">)</span>                 <span class="n">Output</span> <span class="n">Shape</span>              <span class="n">Param</span>
+<span class="o">=================================================================</span>
+<span class="n">dense</span> <span class="p">(</span><span class="n">Dense</span><span class="p">)</span>                <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>               <span class="mi">600</span>
+<span class="n">_________________________________________________________________</span>
+<span class="n">dense_1</span> <span class="p">(</span><span class="n">Dense</span><span class="p">)</span>              <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>                 <span class="mi">101</span>
+<span class="o">=================================================================</span>
+<span class="n">Total</span> <span class="n">params</span><span class="p">:</span> <span class="mi">701</span>
+<span class="n">Trainable</span> <span class="n">params</span><span class="p">:</span> <span class="mi">701</span>
+<span class="n">Non</span><span class="o">-</span><span class="n">trainable</span> <span class="n">params</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">_________________________________________________________________</span>
+</pre></div>
+</div>
+<p>可以看到，训练集股价的均方误差值约为
+<code class="docutils literal notranslate"><span class="pre">320</span></code>，而预测集股价的均方误差值约为
+<code class="docutils literal notranslate"><span class="pre">330</span></code>，以这种方式预测股价存在较大的问题。</p>
+<p>在下一部分中，我们将学习如何在模型中将股价价格数据与新闻标题的文本数据集成在一起的方式进行预测。</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="python_base_knowledge.html" class="btn btn-neutral float-left" title="1.4 test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="python_base.html" class="btn btn-neutral float-right" title="4、额外功能" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, 程序员城哥.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
