@@ -3,9 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Python学习与数据挖掘
-======================================
-
 .. toctree::
    :maxdepth: 3
    :caption: Contents:
