@@ -1,4 +1,4 @@
-![](/source/picture/微信图片_20210624235928.jpg)
+![](http://124.223.66.77/wp-content/uploads/2022/06/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210624235928-1024x485.jpg)
 <p align="center">
       <a href="/source/picture/微信图片_20211218181047.jpg"><img src="https://img.shields.io/badge/Talk-%E5%BE%AE%E4%BF%A1%E7%BE%A4-brightgreen.svg?style=popout-square" alt="微信"></a>
     <img src='https://img.shields.io/badge/language-Python-blue.svg' alt="Build Status">
@@ -31,3 +31,24 @@ Python 可以以程序方式、面向对象的方式或功能方式来处理。
 Python 是为可读性设计的，与英语有一些相似之处，并受到数学的影响。
 Python 使用新行来完成命令，而不像通常使用分号或括号的其他编程语言。
 Python 依赖缩进，使用空格来定义范围；例如循环、函数和类的范围。其他编程语言通常使用花括号来实现此目的。
+
+### Python 特点
+- 易于学习：Python有相对较少的关键字，结构简单，和一个明确定义的语法，学习起来更加简单。
+
+- 易于阅读：Python代码定义的更清晰。
+
+- 易于维护：Python的成功在于它的源代码是相当容易维护的。
+
+- 一个广泛的标准库：Python的最大的优势之一是丰富的库，跨平台的，在UNIX，Windows和Macintosh兼容很好。
+
+- 互动模式：互动模式的支持，您可以从终端输入执行代码并获得结果的语言，互动的测试和调试代码片断。
+
+- 可移植：基于其开放源代码的特性，Python已经被移植（也就是使其工作）到许多平台。
+
+- 可扩展：如果你需要一段运行很快的关键代码，或者是想要编写一些不愿开放的算法，你可以使用C或C++完成那部分程序，然后从你的Python程序中调用。
+
+- 数据库：Python提供所有主要的商业数据库的接口。
+
+- GUI编程：Python支持GUI可以创建和移植到许多系统调用。
+
+- 可嵌入: 你可以将Python嵌入到C/C++程序，让你的程序的用户获得"脚本化"的能力。
