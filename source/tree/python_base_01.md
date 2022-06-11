@@ -1,16 +1,10 @@
-<p align="center">
-      <a href="/source/picture/微信图片_20211218181047.jpg"><img src="https://img.shields.io/badge/Talk-%E5%BE%AE%E4%BF%A1%E7%BE%A4-brightgreen.svg?style=popout-square" alt="微信"></a>
-    <img src='https://img.shields.io/badge/language-Python-blue.svg' alt="Build Status">
-    <a href='/source/picture/微信图片_20211218181047.jpg'><img src='http://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-30k+-brightgreen'></a>
-</p>
-
 ## Python 简介
 
 ### python 是什么？
-Python 是一种解释型、面向对象、动态数据类型的高级程序设计语言。它由 Guido van Rossum 在 1989 年发明。Python 官方宣布，2020 年 1 月 1 日， 停止 Python 2 的更新。Python 2.7 被确定为最后一个 Python 2.x 版本，建议 Python 用户使用3.X版本。
+Python 是一种解释型、面向对象、动态数据类型的高级程序设计语言，它由 Guido van Rossum 在 1989 年发明。Python 官方宣布，2020 年 1 月 1 日， 停止 Python 2 的更新。Python 2.7 被确定为最后一个 Python 2.x 版本，目前建议 Python 用户使用3.X版本。
 
-### Python 可以做什么？
-可以在服务器上使用 Python 来创建 Web 应用程序。
+### Python 做什么？
+Python 可以做的事情很多。
 - Python 可以与软件一起使用来创建工作流。
 - Python 可以连接到数据库系统。它还可以读取和修改文件。
 - Python 可用于处理大数据并执行复杂的数学运算。
@@ -49,5 +43,35 @@ Python 依赖缩进，使用空格来定义范围；例如循环、函数和类�
 
 - 可嵌入: 你可以将Python嵌入到C/C++程序，让你的程序的用户获得"脚本化"的能力。
 
+## Python 环境搭建
 
-![5-0](https://user-images.githubusercontent.com/36021452/173180585-cea0896e-6215-4d04-a798-0cd147530a7d.jpg)
+### Python下载
+Python最新源码，二进制文档，新闻资讯等可以在Python的官网查看到：
+
+Python官网：https://www.python.org/
+
+你可以在以下链接中下载 Python 的文档，你可以下载 HTML、PDF 和 PostScript 等格式的文档。
+
+Python文档下载地址：https://www.python.org/doc/
+
+### Python安装
+Python已经被移植在许多平台上（经过改动使它能够工作在不同平台上）。
+
+您需要下载适用于您使用平台的二进制代码，然后安装Python。
+
+如果您平台的二进制代码是不可用的，你需要使用C编译器手动编译源代码。
+
+编译的源代码，功能上有更多的选择性， 为python安装提供了更多的灵活性。
+
+以下是各个平台安装包的下载地址：
+![image](https://user-images.githubusercontent.com/36021452/173181004-ac10d046-0b4f-4ca0-b102-46a931cee7b0.png)
+
+### 集成开发环境: PyCharm
+PyCharm 是由 JetBrains 打造的一款 Python IDE，支持 macOS、 Windows、 Linux 系统。
+
+PyCharm 功能 : 调试、语法高亮、Project管理、代码跳转、智能提示、自动完成、单元测试、版本控制……
+
+PyCharm 下载地址 : https://www.jetbrains.com/pycharm/download/
+
+PyCharm 安装地址：http://www.runoob.com/w3cnote/pycharm-windows-install.html
+
