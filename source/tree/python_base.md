@@ -22,3 +22,4 @@ pip-sync
 ### 安装
 
 这次怎么安装呢
+![](https://user-images.githubusercontent.com/36021452/173190262-a0198bcd-3ab6-4955-97e7-071c95de0c62.png#pic_center)
