@@ -535,6 +535,67 @@ print (counter)
 print (miles)
 print (name)
 ```
+执行以上程序会输出如下结果：
+```python
+100
+1000.0
+runoob
+```
+### 多个变量赋值
+Python允许你同时为多个变量赋值。例如：
+```python
+a = b = c = 1
+```
+您也可以为多个对象指定多个变量。例如：
+```python
+a, b, c = 1, 2, "runoob"
+```
+### 标准数据类型
+Python3 中有六个标准的数据类型：
+
+- Number（数字）
+- String（字符串）
+- List（列表）
+- Tuple（元组）
+- Set（集合）
+- Dictionary（字典）
+
+Python3 的六个标准数据类型中：
+不可变数据（3 个）：Number（数字）、String（字符串）、Tuple（元组）；
+可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。
+
+#### Number（数字）
+Python3 支持 int、float、bool、complex（复数）。
+
+在Python 3里，只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。
+
+像大多数语言一样，数值类型的赋值和计算都是很直观的。
+
+内置的 type() 函数可以用来查询变量所指的对象类型。
+```python
+>>> a, b, c, d = 20, 5.5, True, 4+3j
+>>> print(type(a), type(b), type(c), type(d))
+<class 'int'> <class 'float'> <class 'bool'> <class 'complex'>
+```
+#### String（字符串）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
