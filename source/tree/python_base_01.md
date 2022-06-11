@@ -64,7 +64,12 @@ Python已经被移植在许多平台上（经过改动使它能够工作在不�
 编译的源代码，功能上有更多的选择性， 为python安装提供了更多的灵活性。
 
 以下是各个平台安装包的下载地址：
-![image](https://user-images.githubusercontent.com/36021452/173181004-ac10d046-0b4f-4ca0-b102-46a931cee7b0.png)
+![image](https://user-images.githubusercontent.com/36021452/173181004-ac10d046-0b4f-4ca0-b102-46a931cee7b0.png#pic_center)
+
+
+<div style="align: center">
+<img src="https://user-images.githubusercontent.com/36021452/173181004-ac10d046-0b4f-4ca0-b102-46a931cee7b0.png"/>
+</div>
 
 ### 集成开发环境: PyCharm
 PyCharm 是由 JetBrains 打造的一款 Python IDE，支持 macOS、 Windows、 Linux 系统。
@@ -417,7 +422,7 @@ trusted-host=tsinghua.edu.cn
 以上几乎包含了 pip 的所有使用场景，也许有不少用法你还没有用过，不过没关系，你只要收藏本文，等到要用的时候再来查阅即可。
 
 
-
+## Python 中文编码
 
 
 
