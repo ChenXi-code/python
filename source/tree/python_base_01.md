@@ -476,12 +476,54 @@ python中数字有四种类型：整数、布尔型、浮点数和复数。
 - Python 中的字符串不能改变。
 - Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。
 - 字符串的截取的语法格式如下：变量[头下标:尾下标:步长]
+
 ```python
 word = '字符串'
 sentence = "这是一个句子。"
 paragraph = """这是一个段落，
 可以由多行组成"""
 ```
+实例
+```python
+#!/usr/bin/python3
+str='123456789'
+print(str)                 # 输出字符串
+print(str[0:-1])           # 输出第一个到倒数第二个的所有字符
+print(str[0])              # 输出字符串第一个字符
+print(str[2:5])            # 输出从第三个开始到第五个的字符
+print(str[2:])             # 输出从第三个开始后的所有字符
+print(str[1:5:2])          # 输出从第二个开始到第五个且每隔一个的字符（步长为2）
+print(str * 2)             # 输出字符串两次
+print(str + '你好')         # 连接字符串
+print('------------------------------')
+print('hello\nrunoob')      # 使用反斜杠(\)+n转义特殊字符
+print(r'hello\nrunoob')     # 在字符串前面添加一个 r，表示原始字符串，不会发生转义
+```
+
+### import 与 from...import
+在 python 用 import 或者 from...import 来导入相应的模块。
+
+- 将整个模块(somemodule)导入，格式为： import somemodule
+- 从某个模块中导入某个函数,格式为： from somemodule import somefunction
+- 从某个模块中导入多个函数,格式为： from somemodule import firstfunc, secondfunc, thirdfunc
+- 将某个模块中的全部函数导入，格式为： from somemodule import *
+
+### 命令行参数
+很多程序可以执行一些操作来查看一些基本信息，Python可以使用-h参数查看各参数帮助信息：
+```python
+$ python -h
+usage: python [option] ... [-c cmd | -m mod | file | -] [arg] ...
+Options and arguments (and corresponding environment variables):
+-c cmd : program passed in as string (terminates option list)
+-d     : debug output from parser (also PYTHONDEBUG=x)
+-E     : ignore environment variables (such as PYTHONPATH)
+-h     : print this help message and exit
+```
+
+## Python3 基本数据类型
+
+
+
 
 
 
