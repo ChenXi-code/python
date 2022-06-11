@@ -4,9 +4,6 @@
     <a href='/source/picture/微信图片_20211218181047.jpg'><img src='http://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-30k+-brightgreen'></a>
 </p>
 
-
-
-
 ## Python 简介
 
 ### python 是什么？
