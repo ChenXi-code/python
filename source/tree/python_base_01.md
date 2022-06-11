@@ -1,4 +1,4 @@
-### 什么是 Python？
+## 什么是 Python？
 Python 是一种解释型、面向对象、动态数据类型的高级程序设计语言。它由 Guido van Rossum 于 1989 年底发明，第一个公开发行版发行于 1991 年。官方宣布，2020 年 1 月 1 日， 停止 Python 2 的更新。Python 2.7 被确定为最后一个 Python 2.x 版本。
 
 ### Python 可以做什么？
