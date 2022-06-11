@@ -5,7 +5,7 @@
    :maxdepth: 2
    
    python_base_01.md
-   how_to_study_py.rst
+   python_base_02.md
 
 第二章：python进阶
 ===================================
