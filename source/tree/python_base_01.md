@@ -75,3 +75,16 @@ PyCharm 下载地址 : https://www.jetbrains.com/pycharm/download/
 
 PyCharm 安装地址：http://www.runoob.com/w3cnote/pycharm-windows-install.html
 
+### pip 使用方法
+
+说到 pip ，大家都不会陌生。但我相信不少人，只是熟悉几个常用的用法，而对于其他几个低频且实用的用法，却知之甚少，这两天，我把这些用法整理了一下，应该是网络上比较全的介绍
+
+1. 查询软件包
+
+
+
+
+
+
+
+
