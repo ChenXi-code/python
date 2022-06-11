@@ -79,7 +79,7 @@ PyCharm 安装地址：http://www.runoob.com/w3cnote/pycharm-windows-install.htm
 
 说到 pip ，大家都不会陌生。但我相信不少人，只是熟悉几个常用的用法，而对于其他几个低频且实用的用法，却知之甚少，这两天，我把这些用法整理了一下，应该是网络上比较全的介绍
 
-1. 查询软件包
+#### 查询软件包
 
 查询当前环境安装的所有软件包
 
@@ -105,7 +105,7 @@ $ pip list --outdated
 $ pip show pkg
 ```
 
-2. 下载软件包
+#### 下载软件包
 
 在不安装软件包的情况下下载软件包到本地
 
@@ -126,7 +126,7 @@ $ pip install wheel
 $ pip wheel --wheel-dir=/local/wheels -r requirements.txt
 ```
 
-3. 安装软件包
+#### 安装软件包
 
 使用 `pip install <pkg>` 可以很方便地从 pypi 上搜索下载并安装 python 包。
 
@@ -138,14 +138,14 @@ $ pip install requests
 
 这是安装包的基本格式，我们也可以为其添加更多参数来实现不同的效果。
 
-**3.1 只从本地安装，而不从 pypi 安装**
+**1 只从本地安装，而不从 pypi 安装**
 
 ```bash
 # 前提你得保证你已经下载 pkg 包到 /local/wheels 目录下
 $ pip install --no-index --find-links=/local/wheels pkg
 ```
 
-**3.2 限定版本进行软件包安装**
+**2 限定版本进行软件包安装**
 
 以下三种，对单个 python 包的版本进行了约束
 
@@ -173,7 +173,7 @@ pip install -r requirements.txt
 pip install -c constraints.txt
 ```
 
-**3.3 限制不使用二进制包安装**
+**3 限制不使用二进制包安装**
 
 由于默认情况下，wheel 包的平台是运行 pip download 命令 的平台，所以可能出现平台不适配的情况。
 
@@ -191,7 +191,7 @@ $ pip download --no-binary=:all: pkg
 $ pip install pkg --no-binary
 ```
 
-**3.4 指定代理服务器安装**
+**4 指定代理服务器安装**
 
 当你身处在一个内网环境中时，无法直接连接公网。这时候你使用`pip install` 安装包，就会失败。
 
@@ -257,7 +257,7 @@ proxy=http://xxx.xxx.xxx.xxx:8080
 trusted-host=mirrors.aliyun.com 
 ```
 
-**3.5 安装用户私有软件包**
+**5 安装用户私有软件包**
 
 很多人可能还不清楚，python 的安装包是可以用户隔离的。
 
@@ -346,7 +346,7 @@ logout
 >>> 
 ```
 
-**3.6 延长超时时间**
+**6 延长超时时间**
 
 若网络情况不是很好，在安装某些包时经常会因为 ReadTimeout 而失败。
 
@@ -368,7 +368,7 @@ $ pip install --default-timeout=100 <packages>
 $ pip uninstall pkg
 ```
 
-5.升级软件包
+#### 升级软件包
 ---------
 
 想要对现有的 python 进行升级，其本质上也是先从 pypi 上下载最新版本的包，再对其进行安装。所以升级也是使用 `pip install`，只不过要加一个参数 `--upgrade`。
@@ -393,7 +393,7 @@ pip install --upgrade pkg1
 pip install --upgrade pkg1 --upgrade-strategy only-if-need
 ```
 
-6.配置文件
+#### 配置文件
 
 由于在使用 pip 安装一些包时，默认会使用 pip 的官方源，所以经常会报网络超时失败。
 
@@ -414,7 +414,6 @@ index-url=https://pypi.tuna.tsinghua.edu.cn/simple/
 [install]
 trusted-host=tsinghua.edu.cn
 ```
-
 以上几乎包含了 pip 的所有使用场景，也许有不少用法你还没有用过，不过没关系，你只要收藏本文，等到要用的时候再来查阅即可。
 
 
