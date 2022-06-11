@@ -4,7 +4,7 @@
 .. toctree::
    :maxdepth: 2
    
-   python_base_knowledge.rst
+   python_base_01.md
    how_to_study_py.rst
 
 第二章：python进阶
