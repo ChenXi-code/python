@@ -598,7 +598,7 @@ print (str[2:])      # 输出从第三个开始的后的所有字符
 print (str * 2)      # 输出字符串两次，也可以写成 print (2 * str)
 print (str + "TEST") # 连接字符串
 ```
-
+![](https://upload-images.jianshu.io/upload_images/18981102-88dda9ce12998e30.png#pic_center)
 
 
 
