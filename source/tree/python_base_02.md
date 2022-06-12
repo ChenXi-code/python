@@ -609,17 +609,65 @@ else:
     else:
         print  ("你输入的数字不能整除 2 和 3")
 ```
+## Python3 循环语句
+
+本章节将为大家介绍 Python 循环语句的使用。
+
+Python 中的循环语句有 for 和 while。
 
 
+### while 循环
+Python 中 while 语句的一般形式：
+```python
+while 判断条件(condition)：
+    执行语句(statements)……
+```
 
+以下实例使用了 while 来计算 1 到 100 的总和：
+```python
+#!/usr/bin/env python3
+ 
+n = 100
+ 
+sum = 0
+counter = 1
+while counter <= n:
+    sum = sum + counter
+    counter += 1
+ 
+print("1 到 %d 之和为: %d" % (n,sum))
+```
 
+### while 循环使用 else 语句
+如果 while 后面的条件语句为 false 时，则执行 else 的语句块。
 
+语法格式如下：
+```python
+while <expr>:
+    <statement(s)>
+else:
+    <additional_statement(s)>
+```
 
-
-
-
-
-
+```
+#!/usr/bin/python3
+ 
+count = 0
+while count < 5:
+   print (count, " 小于 5")
+   count = count + 1
+else:
+   print (count, " 大于或等于 5")
+```
+执行以上脚本，输出结果如下：
+```
+0  小于 5
+1  小于 5
+2  小于 5
+3  小于 5
+4  小于 5
+5  大于或等于 5
+```
 
 
 
