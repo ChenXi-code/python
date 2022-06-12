@@ -236,7 +236,7 @@ python3 hello.py
 ```
 Hello, Python!
 ```
-## Python3 注释
+## Python 注释
 确保对模块, 函数, 方法和行内注释使用正确的风格。
 
 Python 中的注释有单行注释和多行注释。
@@ -269,7 +269,7 @@ print("Hello, World!")
 print("Hello, World!")
 ```
 
-## Python3 运算符
+## Python 运算符
 
 什么是运算符？举个简单的例子:
 > 4 + 5 = 9
@@ -533,7 +533,7 @@ else:
 4 - a 和 b 没有相同的标识
 ```
 
-## Python3 条件控制
+## Python 条件控制
 Python 条件语句是通过一条或多条语句的执行结果（True 或者 False）来决定执行的代码块。
 
 ### if 语句
