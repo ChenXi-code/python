@@ -137,6 +137,7 @@ Python 使用 lambda 来创建匿名函数。
 - 虽然 lambda 函数看起来只能写一行，却不等同于 C 或 C++ 的内联函数，后者的目的是调用小函数时不占用栈内存从而增加运行效率。
 
 **语法**
+
 lambda 函数的语法只包含一个语句，如下：
 ```
 lambda [arg1 [,arg2,.....argn]]:expression
@@ -150,6 +151,38 @@ print(x(5))
 ```
 15
 ```
+
+### return 语句
+return [表达式] 语句用于退出函数，选择性地向调用方返回一个表达式。不带参数值的 return 语句返回 None。之前的例子都没有示范如何返回数值，以下实例演示了 return 语句的用法：
+
+```python
+#!/usr/bin/python3
+ 
+# 可写函数说明
+def sum( arg1, arg2 ):
+   # 返回2个参数的和."
+   total = arg1 + arg2
+   print ("函数内 : ", total)
+   return total
+ 
+# 调用sum函数
+total = sum( 10, 20 )
+print ("函数外 : ", total)
+```
+以上实例输出结果：
+```
+函数内 :  30
+函数外 :  30
+```
+
+
+
+
+
+
+
+
+
 
 
 
