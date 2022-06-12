@@ -307,7 +307,11 @@ Thread-1 processing Five
 退出主线程
 ```
 ## Python JSON 数据解析
+JSON (JavaScript Object Notation) 是一种轻量级的数据交换格式。
 
+Python3 中可以使用 json 模块来对 JSON 数据进行编解码，它包含了两个函数：
+- json.dumps(): 对数据进行编码。
+- json.loads(): 对数据进行解码。
 
 
 
