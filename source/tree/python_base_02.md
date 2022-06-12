@@ -381,6 +381,141 @@ else:
 6 - b 大于等于 a
 ```
 
+### Python位运算符
+```python
+#!/usr/bin/python3
+ 
+a = 60            # 60 = 0011 1100 
+b = 13            # 13 = 0000 1101 
+c = 0
+ 
+c = a & b        # 12 = 0000 1100
+print ("1 - c 的值为：", c)
+ 
+c = a | b        # 61 = 0011 1101 
+print ("2 - c 的值为：", c)
+ 
+c = a ^ b        # 49 = 0011 0001
+print ("3 - c 的值为：", c)
+ 
+c = ~a           # -61 = 1100 0011
+print ("4 - c 的值为：", c)
+ 
+c = a << 2       # 240 = 1111 0000
+print ("5 - c 的值为：", c)
+ 
+c = a >> 2       # 15 = 0000 1111
+print ("6 - c 的值为：", c)
+```
+以上实例输出结果：
+```
+1 - c 的值为： 12
+2 - c 的值为： 61
+3 - c 的值为： 49
+4 - c 的值为： -61
+5 - c 的值为： 240
+6 - c 的值为： 15
+```
+
+### Python逻辑运算符
+Python语言支持逻辑运算符，以下假设变量 a 为 10, b为 20:
+
+```python
+#!/usr/bin/python3
+ 
+a = 10
+b = 20
+ 
+if ( a and b ):
+   print ("1 - 变量 a 和 b 都为 true")
+else:
+   print ("1 - 变量 a 和 b 有一个不为 true")
+ 
+if ( a or b ):
+   print ("2 - 变量 a 和 b 都为 true，或其中一个变量为 true")
+else:
+   print ("2 - 变量 a 和 b 都不为 true")
+ 
+# 修改变量 a 的值
+a = 0
+if ( a and b ):
+   print ("3 - 变量 a 和 b 都为 true")
+else:
+   print ("3 - 变量 a 和 b 有一个不为 true")
+ 
+if ( a or b ):
+   print ("4 - 变量 a 和 b 都为 true，或其中一个变量为 true")
+else:
+   print ("4 - 变量 a 和 b 都不为 true")
+ 
+if not( a and b ):
+   print ("5 - 变量 a 和 b 都为 false，或其中一个变量为 false")
+else:
+   print ("5 - 变量 a 和 b 都为 true")
+```
+以上实例输出结果：
+
+```
+1 - 变量 a 和 b 都为 true
+2 - 变量 a 和 b 都为 true，或其中一个变量为 true
+3 - 变量 a 和 b 有一个不为 true
+4 - 变量 a 和 b 都为 true，或其中一个变量为 true
+5 - 变量 a 和 b 都为 false，或其中一个变量为 false
+```
+
+### Python成员运算符
+除了以上的一些运算符之外，Python还支持成员运算符，测试实例中包含了一系列的成员，包括字符串，列表或元组。
+
+```
+#!/usr/bin/python3
+ 
+a = 10
+b = 20
+list = [1, 2, 3, 4, 5 ]
+ 
+if ( a in list ):
+   print ("1 - 变量 a 在给定的列表中 list 中")
+else:
+   print ("1 - 变量 a 不在给定的列表中 list 中")
+ 
+if ( b not in list ):
+   print ("2 - 变量 b 不在给定的列表中 list 中")
+else:
+   print ("2 - 变量 b 在给定的列表中 list 中")
+ 
+# 修改变量 a 的值
+a = 2
+if ( a in list ):
+   print ("3 - 变量 a 在给定的列表中 list 中")
+else:
+   print ("3 - 变量 a 不在给定的列表中 list 中")
+```
+以上实例输出结果：
+```
+1 - 变量 a 不在给定的列表中 list 中
+2 - 变量 b 不在给定的列表中 list 中
+3 - 变量 a 在给定的列表中 list 中
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
