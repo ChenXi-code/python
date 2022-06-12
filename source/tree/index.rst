@@ -8,6 +8,7 @@
    python_base_02.md
    python_base_03.md
    python_base_04.md
+   python_base_05.md
 
 第二章：python进阶
 ===================================
