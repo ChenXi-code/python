@@ -409,32 +409,285 @@ output.close()
 ```
 
 
+## Python 错误和异常
+作为 Python 初学者，在刚学习 Python 编程时，经常会看到一些报错信息，在前面我们没有提及，这章节我们会专门介绍。
 
+Python 有两种错误很容易辨认：语法错误和异常。
 
+Python assert（断言）用于判断一个表达式，在表达式条件为 false 的时候触发异常。
 
+### 语法错误
+Python 的语法错误或者称之为解析错，是初学者经常碰到的，如下实例
+```python
+>>> while True print('Hello world')
+  File "<stdin>", line 1, in ?
+    while True print('Hello world')
+                   ^
+SyntaxError: invalid syntax
+```
+这个例子中，函数 print() 被检查到有错误，是它前面缺少了一个冒号 : 。
 
+语法分析器指出了出错的一行，并且在最先找到的错误的位置标记了一个小小的箭头。
 
+### 异常
+即便 Python 程序的语法是正确的，在运行它的时候，也有可能发生错误。运行期检测到的错误被称为异常。
 
+大多数的异常都不会被程序处理，都以错误信息的形式展现在这里:
+```python
+>>> 10 * (1/0)             # 0 不能作为除数，触发异常
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+ZeroDivisionError: division by zero
+>>> 4 + spam*3             # spam 未定义，触发异常
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+NameError: name 'spam' is not defined
+>>> '2' + 2               # int 不能与 str 相加，触发异常
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str
+```
 
+### 异常处理
+**try/except**
+异常捕捉可以使用 try/except 语句。
+```python
+while True:
+    try:
+        x = int(input("请输入一个数字: "))
+        break
+    except ValueError:
+        print("您输入的不是数字，请再次尝试输入！")
+ ```
+**try/except...else**
+try/except 语句还有一个可选的 else 子句，如果使用这个子句，那么必须放在所有的 except 子句之后。
 
+else 子句将在 try 子句没有发生任何异常的时候执行。
+```python
+for arg in sys.argv[1:]:
+    try:
+        f = open(arg, 'r')
+    except IOError:
+        print('cannot open', arg)
+    else:
+        print(arg, 'has', len(f.readlines()), 'lines')
+        f.close()
+```
+### try-finally 语句
+try-finally 语句无论是否发生异常都将执行最后的代码。
 
+```python
+try:
+    runoob()
+except AssertionError as error:
+    print(error)
+else:
+    try:
+        with open('file.log') as file:
+            read_data = file.read()
+    except FileNotFoundError as fnf_error:
+        print(fnf_error)
+finally:
+    print('这句话，无论异常是否发生都会执行。')
+```
 
+### 用户自定义异常
+你可以通过创建一个新的异常类来拥有自己的异常。异常类继承自 Exception 类，可以直接继承，或者间接继承，例如:
+```python
+>>> class MyError(Exception):
+        def __init__(self, value):
+            self.value = value
+        def __str__(self):
+            return repr(self.value)
+   
+>>> try:
+        raise MyError(2*2)
+    except MyError as e:
+        print('My exception occurred, value:', e.value)
+   
+My exception occurred, value: 4
+>>> raise MyError('oops!')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+__main__.MyError: 'oops!'
+```
+## Python 面向对象
+python从设计之初就已经是一门面向对象的语言，正因为如此，在Python中创建一个类和对象是很容易的。本章节我们将详细介绍Python的面向对象编程。
 
+如果你以前没有接触过面向对象的编程语言，那你可能需要先了解一些面向对象语言的一些基本特征，在头脑里头形成一个基本的面向对象的概念，这样有助于你更容易的学习Python的面向对象编程。
 
+接下来我们先来简单的了解下面向对象的一些基本特征。
 
+面向对象技术简介
 
+- 类(Class): 用来描述具有相同的属性和方法的对象的集合。它定义了该集合中每个对象所共有的属性和方法。对象是类的实例。
+- 方法：类中定义的函数。
+- 类变量：类变量在整个实例化的对象中是公用的。类变量定义在类中且在函数体之外。类变量通常不作为实例变量使用。
+- 数据成员：类变量或者实例变量用于处理类及其实例对象的相关的数据。
+- 方法重写：如果从父类继承的方法不能满足子类的需求，可以对其进行改写，这个过程叫方法的覆盖（override），也称为方法的重写。
+- 局部变量：定义在方法中的变量，只作用于当前实例的类。
+- 实例变量：在类的声明中，属性是用变量来表示的，这种变量就称为实例变量，实例变量就是一个用 self 修饰的变量。
+- 继承：即一个派生类（derived class）继承基类（base class）的字段和方法。继承也允许把一个派生类的对象作为一个基类对象对待。例如，有这样一个设计：一个Dog类型的对象派生自Animal类，这是模拟"是一个（is-a）"关系（例图，Dog是一个Animal）。
+- 实例化：创建一个类的实例，类的具体对象。
+- 对象：通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。
+和其它编程语言相比，Python 在尽可能不增加新的语法和语义的情况下加入了类机制。
 
+Python中的类提供了面向对象编程的所有基本功能：类的继承机制允许多个基类，派生类可以覆盖基类中的任何方法，方法中可以调用基类中的同名方法。
 
+对象可以包含任意数量和类型的数据。
 
+### 类定义
+语法格式如下：
+```
+class ClassName:
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
+ ```
+类实例化后，可以使用其属性，实际上，创建一个类之后，可以通过类名访问其属性。
+### 类对象
+类对象支持两种操作：属性引用和实例化。
 
+属性引用使用和 Python 中所有的属性引用一样的标准语法：obj.name。
 
+类对象创建后，类命名空间中所有的命名都是有效属性名。所以如果类定义是这样:
+```python
+#!/usr/bin/python3
+ 
+class MyClass:
+    """一个简单的类实例"""
+    i = 12345
+    def f(self):
+        return 'hello world'
+ 
+# 实例化类
+x = MyClass()
+ 
+# 访问类的属性和方法
+print("MyClass 类的属性 i 为：", x.i)
+print("MyClass 类的方法 f 输出为：", x.f())
+```
+以上创建了一个新的类实例并将该对象赋给局部变量 x，x 为空的对象。
 
+执行以上程序输出结果为：
+```
+MyClass 类的属性 i 为： 12345
+MyClass 类的方法 f 输出为： hello world
+```
+### self代表类的实例，而非类
+类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的第一个参数名称, 按照惯例它的名称是 self。
+```python
+class Test:
+    def prt(self):
+        print(self)
+        print(self.__class__)
+ 
+t = Test()
+t.prt()
+```
+以上实例执行结果为：
+```
+<__main__.Test instance at 0x100771878>
+__main__.Test
+```
+从执行结果可以很明显的看出，self 代表的是类的实例，代表当前对象的地址，而 self.class 则指向类。
 
+self 不是 python 关键字，我们把他换成 runoob 也是可以正常执行的:
+```python
+class Test:
+    def prt(runoob):
+        print(runoob)
+        print(runoob.__class__)
+ 
+t = Test()
+t.prt()
+```
+以上实例执行结果为：
+```
+<__main__.Test instance at 0x100771878>
+__main__.Test
+```
+### 类的方法
+在类的内部，使用 def 关键字来定义一个方法，与一般函数定义不同，类方法必须包含参数 self, 且为第一个参数，self 代表的是类的实例。
+```python
+实例(Python 3.0+)
+#!/usr/bin/python3
+ 
+#类定义
+class people:
+    #定义基本属性
+    name = ''
+    age = 0
+    #定义私有属性,私有属性在类外部无法直接进行访问
+    __weight = 0
+    #定义构造方法
+    def __init__(self,n,a,w):
+        self.name = n
+        self.age = a
+        self.__weight = w
+    def speak(self):
+        print("%s 说: 我 %d 岁。" %(self.name,self.age))
+ 
+# 实例化类
+p = people('runoob',10,30)
+p.speak()
+```
+执行以上程序输出结果为：
+```
+runoob 说: 我 10 岁。
+```
+### 继承
+Python 同样支持类的继承，如果一种语言不支持继承，类就没有什么意义。派生类的定义如下所示:
+```
+class DerivedClassName(BaseClassName):
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
+```
+子类（派生类 DerivedClassName）会继承父类（基类 BaseClassName）的属性和方法。
 
-
-
-
-
-
-
+BaseClassName（实例中的基类名）必须与派生类定义在一个作用域内。除了类，还可以用表达式，基类定义在另一个模块中时这一点非常有用:
+> class DerivedClassName(modname.BaseClassName):
+```python
+#!/usr/bin/python3
+ 
+#类定义
+class people:
+    #定义基本属性
+    name = ''
+    age = 0
+    #定义私有属性,私有属性在类外部无法直接进行访问
+    __weight = 0
+    #定义构造方法
+    def __init__(self,n,a,w):
+        self.name = n
+        self.age = a
+        self.__weight = w
+    def speak(self):
+        print("%s 说: 我 %d 岁。" %(self.name,self.age))
+ 
+#单继承示例
+class student(people):
+    grade = ''
+    def __init__(self,n,a,w,g):
+        #调用父类的构函
+        people.__init__(self,n,a,w)
+        self.grade = g
+    #覆写父类的方法
+    def speak(self):
+        print("%s 说: 我 %d 岁了，我在读 %d 年级"%(self.name,self.age,self.grade))
+ 
+ 
+ 
+s = student('ken',10,60,3)
+s.speak()
+```
+执行以上程序输出结果为：
+```
+ken 说: 我 10 岁了，我在读 3 年级
+```
 
