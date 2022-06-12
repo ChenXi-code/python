@@ -128,8 +128,5 @@ print (tinydict.values()) # 输出所有值
 dict_keys(['name', 'code', 'site'])
 dict_values(['runoob', 1, 'www.runoob.com'])
 ```
-
-
-
-
+## Python 推导式
 
