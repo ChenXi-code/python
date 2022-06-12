@@ -496,6 +496,63 @@ else:
 2 - 变量 b 不在给定的列表中 list 中
 3 - 变量 a 在给定的列表中 list 中
 ```
+### Python身份运算符
+```
+#!/usr/bin/python3
+ 
+a = 20
+b = 20
+ 
+if ( a is b ):
+   print ("1 - a 和 b 有相同的标识")
+else:
+   print ("1 - a 和 b 没有相同的标识")
+ 
+if ( id(a) == id(b) ):
+   print ("2 - a 和 b 有相同的标识")
+else:
+   print ("2 - a 和 b 没有相同的标识")
+ 
+# 修改变量 b 的值
+b = 30
+if ( a is b ):
+   print ("3 - a 和 b 有相同的标识")
+else:
+   print ("3 - a 和 b 没有相同的标识")
+ 
+if ( a is not b ):
+   print ("4 - a 和 b 没有相同的标识")
+else:
+   print ("4 - a 和 b 有相同的标识")
+```
+以上实例输出结果：
+```
+1 - a 和 b 有相同的标识
+2 - a 和 b 有相同的标识
+3 - a 和 b 没有相同的标识
+4 - a 和 b 没有相同的标识
+```
+
+## Python3 条件控制
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
