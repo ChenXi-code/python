@@ -583,7 +583,7 @@ Python中的字符串用单引号 ' 或双引号 " 括起来，同时使用反�
 字符串的截取的语法格式如下：
 > 变量[头下标:尾下标]
 索引值以 0 为开始值，-1 为从末尾的开始位置。
-
+<img src="https://img-blog.csdnimg.cn/45c15daab0214ee1b420f8c26e97094e.png" width="300px" height="200" >
 实例如下：
 ```python
 #!/usr/bin/python3
@@ -597,9 +597,8 @@ print (str * 2)      # 输出字符串两次，也可以写成 print (2 * str)
 print (str + "TEST") # 连接字符串
 ```
 
-![](https://img-blog.csdnimg.cn/45c15daab0214ee1b420f8c26e97094e.png)
 
-<img src="https://img-blog.csdnimg.cn/45c15daab0214ee1b420f8c26e97094e.png" width="250px">
+
 
 
 
