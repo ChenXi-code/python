@@ -668,20 +668,122 @@ else:
 4  小于 5
 5  大于或等于 5
 ```
+### for 语句
+Python for 循环可以遍历任何可迭代对象，如一个列表或者一个字符串。
+
+for循环的一般格式如下：
+```
+for <variable> in <sequence>:
+    <statements>
+else:
+    <statements>
+```
+Python for 循环实例：
+```
+>>>languages = ["C", "C++", "Perl", "Python"] 
+>>> for x in languages:
+...     print (x)
+... 
+C
+C++
+Perl
+Python
+>>>
+```
+以下 for 实例中使用了 break 语句，break 语句用于跳出当前循环体：
+```
+#!/usr/bin/python3
+ 
+sites = ["Baidu", "Google","Runoob","Taobao"]
+for site in sites:
+    if site == "Runoob":
+        print("菜鸟教程!")
+        break
+    print("循环数据 " + site)
+else:
+    print("没有循环数据!")
+print("完成循环!")
+```
+执行脚本后，在循环到 "Runoob"时会跳出循环体：
+```
+循环数据 Baidu
+循环数据 Google
+菜鸟教程!
+完成循环!
+```
+### break 和 continue 语句
+
+break 语句可以跳出 for 和 while 的循环体。如果你从 for 或 while 循环中终止，任何对应的循环 else 块将不执行。
+
+continue 语句被用来告诉 Python 跳过当前循环块中的剩余语句，然后继续进行下一轮循环。
+
+实例:while 中使用 break：
+```python
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
+        break
+    print(n)
+print('循环结束。')
+```
+输出结果为：
+```
+4
+3
+循环结束。
+```
 
 
+实例:while 中使用 continue：
+```python
+n = 5
+while n > 0:
+    n -= 1
+    if n == 2:
+        continue
+    print(n)
+print('循环结束。')
+```
+输出结果为：
+```
+4
+3
+1
+0
+循环结束。
+```
+### pass 语句
+Python pass是空语句，是为了保持程序结构的完整性。
 
-
-
-
-
-
-
-
-
-
-
-
+pass 不做任何事情，一般用做占位语句，如下实例
+```python
+>>>while True:
+...     pass  # 等待键盘中断 (Ctrl+C)
+```
+以下实例在字母为 o 时 执行 pass 语句块:
+```
+#!/usr/bin/python3
+ 
+for letter in 'Runoob': 
+   if letter == 'o':
+      pass
+      print ('执行 pass 块')
+   print ('当前字母 :', letter)
+ ```
+ 
+ 执行以上脚本输出结果为：
+ ```
+当前字母 : R
+当前字母 : u
+当前字母 : n
+执行 pass 块
+当前字母 : o
+执行 pass 块
+当前字母 : o
+当前字母 : b
+Good bye!
+ ```
 
 
 
